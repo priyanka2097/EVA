@@ -1,0 +1,90 @@
+<div>
+  <div class="loader center">
+    <h1>Please wait while we are processing the data...</h1>
+    <mat-spinner style="margin-top: 100px" class="center"></mat-spinner>
+  </div>
+  <div class="backdrop"></div>
+  <div class="tree" id="userData">
+    <ul>
+      <li class="tree-container" *ngFor="let item of mainData;">
+        <a (click)="openDialog(item.name, item.userId, item.userName, item.familyName, item.emailIdPrimary, item.contactNumberPrimary, item.createdOn)"
+          class="last-child">
+          <mat-icon class="user-profile-pic">account_circle</mat-icon>
+          <div class="userName">{{item.name}}</div>
+          <div class="userID">{{item.userId}}</div>
+        </a>
+        <ul>
+          <ng-container *ngFor="let data of item.childData; let i=index;">
+            <li class="many-childs" *ngIf="i>0">
+              <a (click)="openDialog(data.name, data.userId, data.userName, data.familyName, data.emailIdPrimary, data.contactNumberPrimary, data.createdOn)"
+                [ngClass]="{'last-child': data.childData}">
+                <mat-icon class="user-profile-pic">account_circle</mat-icon>
+                <div class="userName">{{data.name}}</div>
+                <div class="userID">{{data.userId}}</div>
+              </a>
+              <ul *ngIf="data.childData">
+                <li *ngFor="let subData of data.childData;">
+                  <a (click)="openDialog(subData.name, subData.userId, subData.userName, subData.familyName, subData.emailIdPrimary, subData.contactNumberPrimary, subData.createdOn)"
+                     [ngClass]="{'last-child': subData.childData}">
+                    <mat-icon class="user-profile-pic">account_circle</mat-icon>
+                    <div class="userName">{{subData.name}}</div>
+                    <div class="userID"> {{subData.userId}}</div>
+                  </a>
+                  <ul *ngIf="subData.childData">
+                    <li *ngFor="let grandChild of subData.childData;">
+                      <a (click)="openDialog(grandChild.name, grandChild.userId, grandChild.userName, grandChild.familyName, grandChild.emailIdPrimary, grandChild.contactNumberPrimary, grandChild.createdOn)"
+                        [ngClass]="{'last-child': grandChild.childData}">
+                        <mat-icon class="user-profile-pic">account_circle</mat-icon>
+                        <div class="userName">{{grandChild.name}}</div>
+                        <div class="userID">{{grandChild.userId}}</div>
+                      </a>
+                      <ul *ngIf="grandChild.childData">
+                        <li *ngFor="let subGrandChild of grandChild.childData;">
+                          <a (click)="openDialog(subGrandChild.name, subGrandChild.userId, subGrandChild.userName, subGrandChild.familyName, subGrandChild.emailIdPrimary, subGrandChild.contactNumberPrimary, subGrandChild.createdOn)"
+                             [ngClass]="{'last-child': subGrandChild.childData}">
+                            <mat-icon class="user-profile-pic">account_circle</mat-icon>
+                            <div class="userName">{{subGrandChild.name}}</div>
+                            <div class="userID">{{subGrandChild.userId}}</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="user-details center">
+    <mat-card id="userDetails">
+      <button class="close-dialog" (click)="closeDialog()" mat-flat-button>
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class="user-data-header">
+        <mat-card-title>User Details</mat-card-title>
+      </div>
+      <div class="profile-photo">
+        <img src="../assets/images/Profile-Male-PNG.png" />
+      </div>
+
+      <div class="detail-data-wrapper">
+        <mat-card class="detail-data">
+          <div>
+            <div *ngFor="let item of keys | keyvalue:asIsOrder">
+              <mat-card class="input-wrapper">
+                <mat-label class="input-data-title">{{item.value}}</mat-label>
+                <div class="input-value" [attr.dataKey]='item.key'>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+</div>
