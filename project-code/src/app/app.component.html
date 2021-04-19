@@ -15,7 +15,7 @@
         </a>
         <ul>
           <ng-container *ngFor="let data of item.childData; let i=index;">
-            <li class="many-childs" *ngIf="i>0">
+            <li class="many-childs">
               <a (click)="openDialog(data.name, data.userId, data.userName, data.familyName, data.emailIdPrimary, data.contactNumberPrimary, data.createdOn)"
                 [ngClass]="{'last-child': data.childData}">
                 <mat-icon class="user-profile-pic">account_circle</mat-icon>
