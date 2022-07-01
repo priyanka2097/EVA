@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'userDetails';
   accessToken: any;
   userDetails: any;
+  demoData: any;
   parentData: any = [];
   immediateChild: any = [];
   secondChild: any = [];
@@ -62,7 +63,7 @@ export class AppComponent implements OnInit {
   }
 
   getUserDetails(token) {
-    // Get User Details
+   // Get User Details
     let userDetailsApiUrl =
       'https://evaapi20210311111013.azurewebsites.net/api/User/GetUsersByOrganization?orgId=3';
     let options = {
@@ -80,7 +81,261 @@ export class AppComponent implements OnInit {
 
   displayData() {
     this.isDataLoaded = true;
-    let details = this.userDetails;
+    // let details = this.userDetails;
+    this.demoData = [
+      {
+        userId: 10181,
+        imsuserId: '68d676d7-caab-46fe-a56c-af61a398457f',
+        name: 'mesha',
+        familyName: 's',
+        userName: 'mesha09@gmail.com',
+        emailIdPrimary: 'mesha09@gmail.com',
+        contactNumberPrimary: '9876943214',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-04-01T11:56:13.9898484+00:00',
+        parentId: 10114,
+        isActive: 0,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10180,
+        imsuserId: '62ab2b05-39c1-44dc-8efb-472430c307d0',
+        name: 'Harry',
+        familyName: 'k',
+        userName: 'harry089@gmail.com',
+        emailIdPrimary: 'harry089@gmail.com',
+        contactNumberPrimary: '8879654314',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-04-01T06:24:21.8084744+00:00',
+        parentId: 10114,
+        isActive: 0,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10179,
+        imsuserId: '26277dd5-44a2-4bd2-8b00-7a3050f9b3a5',
+        name: 'ajay',
+        familyName: 'k',
+        userName: 'aj089@gmail.com',
+        emailIdPrimary: 'aj089@gmail.com',
+        contactNumberPrimary: '9879654314',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-04-01T06:10:02.2134603+00:00',
+        parentId: 10114,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10178,
+        imsuserId: '46e9e39d-4a47-43a7-afc2-0f0a4cbee7b1',
+        name: 'ajay',
+        familyName: 'k',
+        userName: 'aj09@gmail.com',
+        emailIdPrimary: 'aj09@gmail.com',
+        contactNumberPrimary: '9876543214',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-04-01T05:58:59.3036241+00:00',
+        parentId: 10114,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10170,
+        imsuserId: '9d099ba4-226c-4936-b4b5-f0bedad35be6',
+        name: 'aruns',
+        familyName: 's',
+        userName: 'arunjdsds@gmail.com',
+        emailIdPrimary: 'arunjdsds@gmail.com',
+        contactNumberPrimary: '9870543214',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-03-30T07:45:59.4136293+00:00',
+        parentId: 10114,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10166,
+        imsuserId: '78b4fc38-8c65-40ea-b0c5-b772d0a7982d',
+        name: 'aruns',
+        familyName: 's',
+        userName: 'arunj@gmail.com',
+        emailIdPrimary: 'karunaj@gmail.com',
+        contactNumberPrimary: '1234567899',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-03-29T03:52:38.0167715+00:00',
+        parentId: 10114,
+        isActive: 0,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 2,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10165,
+        imsuserId: '0eaa81b9-c0c3-4c64-9bf2-57b95fe428de',
+        name: 'aruns',
+        familyName: 's',
+        userName: 'arunk@gmail.com',
+        emailIdPrimary: 'arunk@gmail.com',
+        contactNumberPrimary: '9876543213',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-03-29T03:47:26.1894594+00:00',
+        parentId: 10114,
+        isActive: 0,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10164,
+        imsuserId: '9a072d34-dd32-4c25-bafe-b70e56fbc3ac',
+        name: 'aruns',
+        familyName: 's',
+        userName: 'arung@gmail.com',
+        emailIdPrimary: 'arung@gmail.com',
+        contactNumberPrimary: '9876543212',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-03-29T03:46:29.977116+00:00',
+        parentId: 10114,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10163,
+        imsuserId: 'ea01edd7-3316-4497-9ec2-e5f3a9332705',
+        name: 'aruns',
+        familyName: 's',
+        userName: 'aruns@gmail.com',
+        emailIdPrimary: 'aruns@gmail.com',
+        contactNumberPrimary: '9876543211',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 10114,
+        createdOn: '2021-03-29T03:38:20.6032168+00:00',
+        parentId: 10114,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: 1,
+        dataAccessTypeId: 1,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+      {
+        userId: 10114,
+        imsuserId: '2bc75b45-c4a6-4b7d-8a2f-86468530a86d',
+        name: 'User-1',
+        familyName: 'last-name',
+        userName: 'sumantabag19@gmail.com',
+        emailIdPrimary: 'sumantabag19@gmail.com',
+        contactNumberPrimary: '0159515963',
+        reportingManager: null,
+        teamName: null,
+        teamCount: 0,
+        createdBy: 0,
+        createdOn: '2021-01-20T11:13:55.9629996+00:00',
+        parentId: 0,
+        isActive: 1,
+        timeZoneId: 92,
+        languageId: null,
+        dataAccessTypeId: 2,
+        orgId: 3,
+        currencyCode: null,
+        currencyLocale: null,
+        jobTitle: null,
+        userHierarchy: null,
+        teamUsers: null,
+      },
+    ];
+    
+    let details = this.demoData;
 
     let Ids: any = [];
     let parentId: any = [];
@@ -126,7 +381,7 @@ export class AppComponent implements OnInit {
         teamCount: existing['teamCount'],
         createdBy: existing['createdBy'],
         createdOn: existing['createdOn'],
-        parentId: existing['parentId'],
+        parentId: finalData[Ids[j]]['parentId'],
         isActive: existing['isActive'],
         timeZoneId: existing['timeZoneId'],
         languageId: existing['languageId'],
@@ -144,6 +399,7 @@ export class AppComponent implements OnInit {
 
     for (let i = 0; i < dataArr.length; i++) {
       if (dataArr[i]['parentId'] == 0) {
+        debugger
         let temp = dataArr[i];
         dataArr = [temp];
       }
@@ -158,6 +414,7 @@ export class AppComponent implements OnInit {
             item[i] = {
               childData: finalData[Ids[j]],
               [tempKey]: item[i],
+              item: item[i],
               userId: existing['userId'],
               imsuserId: existing['imsuserId'],
               name: existing['name'],
@@ -189,9 +446,10 @@ export class AppComponent implements OnInit {
 
     this.mainData = dataArr;
     console.log(this.mainData);
+    console.log(finalData)
 
-    $('#userData').fadeToggle();
-    $('.loader').fadeToggle();
+    // $('#userData').fadeToggle();
+    // $('.loader').fadeToggle();
   }
 
   openDialog(name, userId, username, fName, email, contact, created) {
@@ -219,7 +477,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAccessToken();
+    // this.getAccessToken();
+    this.displayData();
     $('#userDetails, .backdrop').hide();
   }
 }
